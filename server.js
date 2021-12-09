@@ -15,6 +15,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",{
         useFindAndModify: false
     }
     )
+    .then(() => console.log("connection work!"))
+    .catch((err) => console.error(err)) 
     // the routes
 require("./routes/apiroutes.js")(app)
 require("./routes/htmlroutes.js")(app)
